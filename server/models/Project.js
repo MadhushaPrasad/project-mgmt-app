@@ -10,6 +10,10 @@ const ProjectSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["Not Started","In progress",'Compled']
+  },
+  clientId:{
+    type: mongoose.Schema.ObjectId,
+    ref:"Client"
   }
 })
 
