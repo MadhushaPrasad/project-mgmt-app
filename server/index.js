@@ -1,18 +1,18 @@
 const express = require('express');
+const colors = require('colors')
 const cors = require('cors');
 const dotenv = require('dotenv');
 const {
   graphqlHTTP
 } = require('express-graphql');
 const schema = require('./schema/schema');
+const dbConnection = require('./config/db')
 
 dotenv.config();
 
-const {
-  MONGODB_URI
-} = process.env;
-
 const PORT = process.env.PORT || 5000;
+
+dbConnection();
 
 const app = express();
 
